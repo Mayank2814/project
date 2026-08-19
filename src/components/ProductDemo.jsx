@@ -283,7 +283,7 @@ export default function ProductDemo() {
               <button
                 key={p.id}
                 onClick={() => setSelectedPresetId(p.id)}
-                className={`rounded border px-3 py-1.5 font-mono text-xs transition-all ${
+                className={`rounded border px-3 py-1.5 font-sans text-xs transition-all ${
                   selectedPresetId === p.id
                     ? 'border-cyan-500/60 bg-cyan-950/40 text-cyan-300 font-medium shadow-sm'
                     : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:border-slate-700 hover:text-slate-200'
@@ -355,7 +355,7 @@ export default function ProductDemo() {
               <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800/80">
                 <div className="flex items-center gap-2">
                   <Layers className="h-4 w-4 text-cyan-400" />
-                  <span className="font-mono text-xs font-semibold text-slate-200 uppercase tracking-wide">
+                  <span className="font-sans text-xs font-semibold text-slate-200 uppercase tracking-wide">
                     Live DAG Pipeline
                   </span>
                 </div>
@@ -364,7 +364,7 @@ export default function ProductDemo() {
                   <button
                     onClick={() => handleRunSimulation('normal')}
                     disabled={isSimulating}
-                    className="flex items-center gap-1 rounded bg-white px-3 py-1.2 font-mono text-xs font-semibold text-slate-950 transition-all hover:bg-slate-200 disabled:opacity-50"
+                    className="flex items-center gap-1 rounded bg-white px-3 py-1.2 font-sans text-xs font-semibold text-slate-950 transition-all hover:bg-slate-200 disabled:opacity-50"
                   >
                     <Play className="h-3 w-3 fill-current" />
                     <span>{isSimulating ? 'Executing...' : 'Run Simulation'}</span>
@@ -373,7 +373,7 @@ export default function ProductDemo() {
                   <button
                     onClick={() => handleRunSimulation('failure')}
                     disabled={isSimulating}
-                    className="flex items-center gap-1 rounded border border-amber-500/40 bg-amber-500/10 px-3 py-1.2 font-mono text-xs font-medium text-amber-300 hover:border-amber-500/60 disabled:opacity-50"
+                    className="flex items-center gap-1 rounded border border-amber-500/40 bg-amber-500/10 px-3 py-1.2 font-sans text-xs font-medium text-amber-300 hover:border-amber-500/60 disabled:opacity-50"
                     title="Simulate step failure and automatic retry"
                   >
                     <AlertTriangle className="h-3 w-3 text-amber-400" />
@@ -390,20 +390,20 @@ export default function ProductDemo() {
                 </div>
               </div>
 
-              {/* Connected DAG Node Flow */}
-              <div className="my-5 grid grid-cols-1 sm:grid-cols-4 gap-2.5 relative">
+              {/* Connected DAG Node Flow with Flow Connectors */}
+              <div className="my-5 grid grid-cols-1 sm:grid-cols-4 gap-3.5 relative">
                 {preset.nodes.map((node, idx) => {
                   const state = nodeStates[idx]
                   const isSelected = selectedNodeIndex === idx
 
                   let statusBorder = 'border-slate-800 bg-slate-900/50 text-slate-400'
                   let statusBadge = 'IDLE'
-                  let badgeClass = 'bg-slate-800 text-slate-400'
+                  let badgeClass = 'bg-slate-900 border border-slate-800 text-slate-400'
 
                   if (state === 'running') {
                     statusBorder = 'border-cyan-400 bg-cyan-950/40 text-cyan-200 shadow-sm'
                     statusBadge = 'RUNNING'
-                    badgeClass = 'bg-cyan-400 text-slate-950 font-bold animate-pulse'
+                    badgeClass = 'bg-cyan-400 text-slate-950 font-bold'
                   } else if (state === 'retry_pending') {
                     statusBorder = 'border-amber-500 bg-amber-950/40 text-amber-200'
                     statusBadge = 'RETRYING'
@@ -415,28 +415,36 @@ export default function ProductDemo() {
                   }
 
                   return (
-                    <div
-                      key={node.id}
-                      onClick={() => setSelectedNodeIndex(idx)}
-                      className={`cursor-pointer rounded border p-2.5 transition-all relative ${statusBorder} ${
-                        isSelected ? 'ring-1 ring-cyan-400 ring-offset-1 ring-offset-[#050811]' : ''
-                      }`}
-                    >
-                      <div className="flex items-center justify-between text-[10px] font-mono">
-                        <span>{node.duration}</span>
-                        <span className={`rounded px-1.5 py-0.2 text-[9px] ${badgeClass}`}>
-                          {statusBadge}
-                        </span>
-                      </div>
-                      
-                      <div className="mt-1.5 text-xs font-semibold text-white leading-tight">
-                        {node.label}
+                    <div key={node.id} className="relative flex items-center">
+                      <div
+                        onClick={() => setSelectedNodeIndex(idx)}
+                        className={`w-full cursor-pointer rounded border p-2.5 transition-all relative ${statusBorder} ${
+                          isSelected ? 'ring-1 ring-cyan-400 ring-offset-1 ring-offset-[#050811]' : ''
+                        }`}
+                      >
+                        <div className="flex items-center justify-between text-[10px] font-mono">
+                          <span>{node.duration}</span>
+                          <span className={`rounded px-1.5 py-0.2 text-[9px] ${badgeClass}`}>
+                            {statusBadge}
+                          </span>
+                        </div>
+                        
+                        <div className="mt-1.5 text-xs font-semibold text-white leading-tight">
+                          {node.label}
+                        </div>
+
+                        <div className="mt-2 flex items-center justify-between text-[10px] text-slate-400 font-mono">
+                          <span>Step {idx + 1}</span>
+                          <span className="uppercase text-cyan-400/90">{node.type}</span>
+                        </div>
                       </div>
 
-                      <div className="mt-2 flex items-center justify-between text-[10px] text-slate-400 font-mono">
-                        <span>Step {idx + 1}</span>
-                        <span className="uppercase text-cyan-400/90">{node.type}</span>
-                      </div>
+                      {/* DAG Connector Arrow (Desktop) */}
+                      {idx < preset.nodes.length - 1 && (
+                        <div className="hidden sm:flex absolute -right-2.5 z-10 h-4.5 w-4.5 items-center justify-center rounded-full border border-slate-800 bg-[#050811] text-slate-500">
+                          <ChevronRight className="h-3 w-3" />
+                        </div>
+                      )}
                     </div>
                   )
                 })}

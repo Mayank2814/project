@@ -52,7 +52,7 @@ export default function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100 font-sans selection:bg-cyan-500/25 selection:text-cyan-200">
+    <div className="min-h-screen bg-[#070a12] text-slate-100 font-sans selection:bg-cyan-500/25 selection:text-cyan-200">
       
       {/* Top Navbar */}
       <Navbar

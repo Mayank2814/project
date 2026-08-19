@@ -8,7 +8,7 @@ export default function EasterEggModal({ isOpen, onClose }) {
     'Type "help" or "status" for available diagnostic subroutines.',
     '------------------------------------------------------------',
     'SECRET EASTER EGG UNLOCKED: You discovered the FlowForge Kernel Inspector!',
-    'Crafted with engineering discipline for the Acdyon Frontend Challenge.'
+    'System diagnostic mode enabled. Subroutines online.'
   ])
 
   // Listen for ESC key to close
@@ -50,9 +50,9 @@ export default function EasterEggModal({ isOpen, onClose }) {
       ]
     } else if (cmd === 'easteregg') {
       response = [
-        '🎉 EASTER EGG UNLOCKED 🎉',
-        '"Build it like you mean it." — Acdyon Technologies Engineering',
-        'Redesigned with strong typography, realistic interactive DAG sandbox, zero fake metrics, and pure code craftsmanship.'
+        '🎉 KERNEL DIAGNOSTICS ONLINE 🎉',
+        'System architecture initialized with zero-allocation scheduler & WASM pipeline spec.',
+        'Engine status: All 4 execution threads operating within sub-2ms boundaries.'
       ]
     } else if (cmd === 'matrix') {
       response = [
@@ -96,7 +96,7 @@ export default function EasterEggModal({ isOpen, onClose }) {
         {/* ASCII Art & Terminal Body */}
         <div className="p-4 max-h-[360px] overflow-y-auto space-y-2 text-emerald-400 bg-[#040705]">
           <pre className="text-[10px] leading-none text-emerald-500 font-bold select-none mb-3">
-{`  _____ _ font-mono
+{`  _____ _ 
  |  ___| | _____      __  _____  ___  _ __ __ _  ___ 
  | |_  | |/ _ \\ \\ /\\ / / / _ \\/ _ \\| '__/ _\` |/ _ \\
  |  _| | | (_) \\ V  V / |  __/ (_) | | | (_| |  __/

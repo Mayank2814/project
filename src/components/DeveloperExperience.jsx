@@ -216,7 +216,7 @@ export default function DeveloperExperience() {
               <button
                 key={key}
                 onClick={() => setSelectedLang(key)}
-                className={`rounded border px-3 py-1.5 font-mono text-xs transition-all ${
+                className={`rounded border px-3 py-1.5 font-sans text-xs transition-all ${
                   selectedLang === key
                     ? 'border-cyan-500/60 bg-cyan-950/40 text-cyan-300 font-medium'
                     : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:border-slate-700 hover:text-slate-200'

@@ -13,10 +13,8 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden pt-12 pb-14 sm:pt-20 sm:pb-20 bg-grid-pattern">
-      {/* Ambient gradient lighting - ultra restrained */}
-      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[380px] w-full max-w-6xl opacity-20 blur-3xl bg-cyan-600"></div>
-
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
         
         {/* Monospace Spec Badge */}
         <div className="flex justify-center">

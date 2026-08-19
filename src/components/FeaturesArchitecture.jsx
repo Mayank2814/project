@@ -118,9 +118,8 @@ export default function FeaturesArchitecture() {
 
             {/* FlowForge */}
             <div className="rounded border border-cyan-500/30 bg-cyan-950/20 p-4">
-              <div className="font-semibold text-cyan-300 mb-2 flex items-center justify-between">
-                <span>FlowForge Code-First Spec</span>
-                <span className="font-mono text-[10px] bg-cyan-500/20 text-cyan-300 px-1.5 py-0.5 rounded">RECOMMENDED</span>
+              <div className="font-semibold text-cyan-300 mb-2">
+                FlowForge Code-First Spec
               </div>
               <ul className="space-y-2 text-slate-300 text-[11px]">
                 <li className="flex items-start gap-2">

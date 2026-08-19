@@ -44,7 +44,7 @@ export default function PerformanceHonesty() {
                   <span className="text-cyan-400 font-bold">1.8 ms</span>
                 </div>
                 <div className="h-2 w-full rounded bg-slate-900 overflow-hidden border border-slate-800">
-                  <div className="h-full bg-cyan-400 w-[10%]"></div>
+                  <div className="h-full bg-cyan-400 w-[3.7%]"></div>
                 </div>
               </div>
 
@@ -54,7 +54,7 @@ export default function PerformanceHonesty() {
                   <span>14.2 ms</span>
                 </div>
                 <div className="h-2 w-full rounded bg-slate-900 overflow-hidden border border-slate-800">
-                  <div className="h-full bg-slate-600 w-[35%]"></div>
+                  <div className="h-full bg-slate-600 w-[29.3%]"></div>
                 </div>
               </div>
 
@@ -64,7 +64,7 @@ export default function PerformanceHonesty() {
                   <span>48.5 ms</span>
                 </div>
                 <div className="h-2 w-full rounded bg-slate-900 overflow-hidden border border-slate-800">
-                  <div className="h-full bg-slate-700 w-[85%]"></div>
+                  <div className="h-full bg-slate-700 w-full"></div>
                 </div>
               </div>
 
@@ -92,7 +92,7 @@ export default function PerformanceHonesty() {
                   <span className="text-cyan-400 font-bold">18.4 MB</span>
                 </div>
                 <div className="h-2 w-full rounded bg-slate-900 overflow-hidden border border-slate-800">
-                  <div className="h-full bg-cyan-400 w-[14%]"></div>
+                  <div className="h-full bg-cyan-400 w-[5.4%]"></div>
                 </div>
               </div>
 
@@ -102,7 +102,7 @@ export default function PerformanceHonesty() {
                   <span>84.0 MB</span>
                 </div>
                 <div className="h-2 w-full rounded bg-slate-900 overflow-hidden border border-slate-800">
-                  <div className="h-full bg-slate-600 w-[45%]"></div>
+                  <div className="h-full bg-slate-600 w-[24.7%]"></div>
                 </div>
               </div>
 
@@ -112,7 +112,7 @@ export default function PerformanceHonesty() {
                   <span>340.0 MB</span>
                 </div>
                 <div className="h-2 w-full rounded bg-slate-900 overflow-hidden border border-slate-800">
-                  <div className="h-full bg-slate-700 w-[95%]"></div>
+                  <div className="h-full bg-slate-700 w-full"></div>
                 </div>
               </div>
 

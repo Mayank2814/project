@@ -23,16 +23,16 @@ export default function Navbar({ onOpenEasterEgg, easterEggTriggerCount, setEast
   }
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-800/60 bg-[#080c14]/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-800/80 bg-[#070a12]/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         
         {/* Brand & Status Pill */}
         <div className="flex items-center gap-3.5">
           <a href="#" className="flex items-center gap-2 group">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md border border-slate-700/60 bg-slate-900/90 text-cyan-400 group-hover:border-cyan-500/50 transition-colors">
+            <div className="flex h-8 w-8 items-center justify-center rounded-md border border-slate-800 bg-slate-900/90 text-cyan-400 group-hover:border-cyan-500/50 transition-colors">
               <Cpu className="h-4.5 w-4.5" />
             </div>
-            <span className="font-mono text-base font-bold tracking-tight text-white">
+            <span className="font-sans text-base font-bold tracking-tight text-white">
               FlowForge<span className="text-cyan-400">.</span>
             </span>
           </a>
@@ -47,11 +47,8 @@ export default function Navbar({ onOpenEasterEgg, easterEggTriggerCount, setEast
               title="Click 3 times to inspect kernel telemetry"
               className="group flex items-center gap-1.5 rounded border border-emerald-500/30 bg-emerald-950/30 px-2 py-0.5 text-[11px] font-mono text-emerald-400 transition-colors hover:border-emerald-500/50"
             >
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-              </span>
-              <span>Ready</span>
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+              <span>Engine Ready</span>
             </button>
           </div>
         </div>
@@ -76,11 +73,11 @@ export default function Navbar({ onOpenEasterEgg, easterEggTriggerCount, setEast
         <div className="hidden sm:flex items-center gap-2.5">
           <button
             onClick={onOpenEasterEgg}
-            className="flex items-center gap-1.5 rounded-md border border-slate-800 bg-slate-900/60 px-2.5 py-1.5 font-mono text-xs text-slate-300 transition-colors hover:border-slate-700 hover:text-white"
+            className="flex items-center gap-1.5 rounded-md border border-slate-800 bg-slate-900/60 px-2.5 py-1.5 font-sans text-xs font-medium text-slate-300 transition-colors hover:border-slate-700 hover:text-white"
             title="Launch Terminal Inspector (Shift + ?)"
           >
             <Terminal className="h-3.5 w-3.5 text-cyan-400" />
-            <span>CLI</span>
+            <span>CLI Shell</span>
           </button>
           
           <a

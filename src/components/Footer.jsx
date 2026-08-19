@@ -81,7 +81,7 @@ export default function Footer({ onOpenEasterEgg }) {
         {/* Bottom Credits */}
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] text-slate-400">
           <div>
-            © 2026 FlowForge Engine Project. Built with craftsmanship for Acdyon Technologies.
+            © 2026 FlowForge Engine Project. Released under the MIT License.
           </div>
           <div className="flex items-center gap-4">
             <a href="#demo" className="hover:text-slate-300 transition-colors">Docs</a>
